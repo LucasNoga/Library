@@ -11,7 +11,11 @@ import android.widget.TextView;
 
 public class BookDetails
     extends AppCompatActivity {
-Book book;
+  private Book book;
+  private TextView  bookNameView;
+  private TextView  bookAuthorView;
+  private TextView  bookDescriptionView;
+  private ImageView bookCoverImageView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +28,10 @@ Book book;
 
     book = (Book) extras.getSerializable("Book");
 
-    TextView bookNameView = (TextView) findViewById(R.id.bookName);
-    TextView bookAuthorView = (TextView) findViewById(R.id.bookAuthor);
-    TextView bookDescriptionView = (TextView) findViewById(R.id.bookDescription);
-    ImageView bookCoverImageView = (ImageView) findViewById(R.id.bookImage);
+    bookNameView        = (TextView) findViewById(R.id.bookName);
+    bookAuthorView      = (TextView) findViewById(R.id.bookAuthor);
+    bookDescriptionView = (TextView) findViewById(R.id.bookDescription);
+    bookCoverImageView  = (ImageView) findViewById(R.id.bookImage);
 
 
     bookNameView.setText(book.getBookName());

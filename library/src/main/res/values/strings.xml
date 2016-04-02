@@ -9,4 +9,7 @@
   <string name="description">Description :</string>
   <string name="bookCoverImage">Book cover image</string>
   <string name="close_button_content">Close</string>
+  <string name="title_activity_modify_book">ModifyBook</string>
+
+  <string name="hello_world">Hello world!</string>
 </resources>

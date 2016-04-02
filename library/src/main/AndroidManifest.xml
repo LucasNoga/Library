@@ -13,12 +13,17 @@
             android:theme="@style/Base.Theme.AppCompat.Light" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".BookDetails"
             android:label="@string/title_activity_book_details" >
+        </activity>
+        <activity
+            android:name=".ModifyBook"
+            android:label="@string/title_activity_modify_book" >
         </activity>
     </application>
 
