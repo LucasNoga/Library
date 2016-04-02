@@ -1,5 +1,6 @@
 package iutsd.android.tp2.saunier_debes_brice.library;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -52,6 +53,10 @@ public class MainActivity
 
   @Override
   public void onClickBookDetails(Book book) {
+    Intent bookDetails = new Intent(this, BookDetails.class);
+
+    bookDetails.putExtra("Book", book);
+    startActivity(bookDetails);
 
   }
 
