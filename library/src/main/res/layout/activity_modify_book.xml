@@ -39,7 +39,8 @@
       <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:layout_marginLeft="12dp">
         <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:id="@+id/bookAuthor" android:textSize="20sp" android:inputType="textAutoComplete|text"
+                  android:id="@+id/bookAuthor" android:textSize="20sp"
+                  android:inputType="textAutoComplete|text"
                   android:editable="false" android:elegantTextHeight="false"/>
       </LinearLayout>
     </LinearLayout>

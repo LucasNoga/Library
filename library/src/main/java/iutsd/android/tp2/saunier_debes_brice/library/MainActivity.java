@@ -85,8 +85,7 @@ public class MainActivity
     if (requestCode == REQUEST_MODIFY_BOOK_CODE) {
       if (data.hasExtra("Book")) {
         Book bookCopy = (Book) data.getSerializableExtra("Book");
-        BooksListFragment listFragmentInstance =
-            (BooksListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
+        BooksListFragment listFragmentInstance = (BooksListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
         if (resultCode == RESULT_MODIFY_BOOK_OK) {
           for (Book book : bookList) {
