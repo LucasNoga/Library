@@ -11,10 +11,12 @@
   <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
                 android:layout_height="match_parent" android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true">
-    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-               android:id="@+id/bookImage" android:layout_gravity="center"
-               android:layout_marginBottom="30dp"
-               android:contentDescription="@string/bookCoverImage"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bookImageButton" android:layout_gravity="center"
+        android:layout_marginBottom="30dp" android:contentDescription="@string/bookCoverImage"
+        android:onClick="onClickImage"/>
     <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
                   android:layout_height="wrap_content" android:layout_gravity="center"
     >

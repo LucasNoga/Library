@@ -18,12 +18,14 @@
       android:title=""
       android:icon="@drawable/interrogation"
       android:orderInCategory="2"
+      android:onClick="onClickHelpButton"
       app:showAsAction="ifRoom"
   />
   <item
       android:id="@+id/add"
       android:title=""
       android:icon="@drawable/plus"
+      android:onClick="onClickAddButton"
       android:orderInCategory="3"
       app:showAsAction="ifRoom"
   />

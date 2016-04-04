@@ -13,18 +13,24 @@ public class MainActivity
     implements BooksListFragment.BooksListProvider,
                BooksListFragment.OnListFragmentInteractionListener {
 
-  public static final String ACTION_MODIFY_EXISTING_BOOK = "modify";
-  public static final String ACTION_ADD_NEW_BOOK         = "add";
-  public static final int    REQUEST_MODIFY_BOOK_CODE    = 1;
-  public static final int    RESULT_MODIFY_BOOK_OK       = 1;
-  public static final int    RESULT_ADD_BOOK_OK          = 2;
+  public static final String ACTION_MODIFY_EXISTING_BOOK          = "modify";
+  public static final String ACTION_ADD_NEW_BOOK                  = "add";
+  public static final int    REQUEST_MODIFY_BOOK_CODE             = 1;
+  public static final int    REQUEST_MODIFY_BOOK_COVER_IMAGE_CODE = 2;
+  public static final int    RESULT_MODIFY_BOOK_OK                = 1;
+  public static final int    RESULT_ADD_BOOK_OK                   = 2;
+  BooksListFragment listFragmentInstance;
   private List<Book> bookList;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     bookList = Book.GET_TEST_LIST();
-    setContentView(R.layout.activity_main);
+   setContentView(R.layout.activity_main);
+
+    listFragmentInstance =
+        (BooksListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
+    listFragmentInstance.update();
   }
 
   @Override
@@ -83,9 +89,8 @@ public class MainActivity
     super.onActivityResult(requestCode, resultCode, data);
 
     if (requestCode == REQUEST_MODIFY_BOOK_CODE) {
-      if (data.hasExtra("Book")) {
+      if (data != null && data.hasExtra("Book")) {
         Book bookCopy = (Book) data.getSerializableExtra("Book");
-        BooksListFragment listFragmentInstance = (BooksListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
         if (resultCode == RESULT_MODIFY_BOOK_OK) {
           for (Book book : bookList) {
@@ -98,5 +103,16 @@ public class MainActivity
         listFragmentInstance.update();
       }
     }
+  }
+
+  public void onClickAddButton(MenuItem item) {
+    Intent modifyBookData = new Intent(this, ModifyBook.class);
+
+    modifyBookData.putExtra("Action", ACTION_ADD_NEW_BOOK);
+
+    startActivityForResult(modifyBookData, REQUEST_MODIFY_BOOK_CODE);
+  }
+
+  public void onClickHelpButton(MenuItem item) {
   }
 }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="iutsd.android.tp2.saunier_debes_brice.library">
+  <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
 
   <application
       android:allowBackup="true"
@@ -13,8 +15,14 @@
         android:theme="@style/AppTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
+        <action android:name="android.intent.action.OPEN_DOCUMENT"/>
+        <action android:name="android.intent.action.GET_CONTENT"/>
+
 
         <category android:name="android.intent.category.LAUNCHER"/>
+        <category android:name="android.intent.category.OPENABLE"/>
+
+        <data android:scheme="image/*"/>
       </intent-filter>
     </activity>
     <activity
