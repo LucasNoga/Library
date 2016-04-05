@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,7 +27,7 @@ public class ModifyBook
   private ImageButton bookCoverImageButton;
   private Button      saveButton;
   private Bundle      extras;
-  private String selectedImgUri;
+  private String      selectedImgUri;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -78,17 +77,10 @@ public class ModifyBook
       saveButton.setText("Modify");
       if (book.getImageUri() == null)
         bookCoverImageButton.setImageResource(R.drawable.livre_recherche_loupe);
-      //bookCoverImageButton.setImageURI(Uri.parse(book.getImageUri()));
-      else {
-        //Log.e("library", );
-        Log.e("library", selectedImgUri);
+      else
         bookCoverImageButton.setImageURI(Uri.parse(book.getImageUri()));
-      }
     } else if (isActionAddNewBook())
       saveButton.setText("Add");
-
-
-
   }
 
   private boolean isActionAddNewBook() {
@@ -104,13 +96,8 @@ public class ModifyBook
     book.setAuthor(bookAuthorView.getText().toString());
     book.setBookName(bookNameView.getText().toString());
     book.setDescription(bookDescriptionView.getText().toString());
-    //Log.e("library", bookCoverImageButton.getDrawable().toString());
-    Log.e("library", selectedImgUri);
-    if (!selectedImgUri.isEmpty()) {
-      Log.e("library", selectedImgUri);
+    if (!selectedImgUri.isEmpty())
       book.setImageUri(selectedImgUri);
-    }
-
     this.finish();
   }
 
@@ -154,11 +141,7 @@ public class ModifyBook
     if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null
         && data.getData() != null) {
       this.selectedImgUri = data.getDataString();
-      Log.e("library", selectedImgUri);
       bookCoverImageButton.setImageURI(Uri.parse(selectedImgUri));
-      Log.e("library", "ImgUri : " + selectedImgUri);
-      Log.e("library", "StrValueOf : " + String.valueOf(Uri.parse(selectedImgUri)));
-      Log.e("library", " : " + Uri.parse(selectedImgUri));
     }
   }
 
