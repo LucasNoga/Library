@@ -115,4 +115,14 @@ public class MainActivity
 
   public void onClickHelpButton(MenuItem item) {
   }
+
+  public void onClickSortByNameButton(MenuItem item) {
+    listFragmentInstance.sortList(Book.SORT_ENUM.NAME);
+    listFragmentInstance.update();
+  }
+
+  public void onClickSortByIDButton(MenuItem item) {
+    listFragmentInstance.sortList(Book.SORT_ENUM.ID);
+    listFragmentInstance.update();
+  }
 }
