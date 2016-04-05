@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="iutsd.android.tp2.saunier_debes_brice.library.BookDetails">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bookImage" android:layout_gravity="center"
+        android:layout_marginBottom="30dp" android:contentDescription="@string/bookCoverImage"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <TextView
+          android:text="@string/book"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textStyle="bold"
+          android:textColor="#9876aa"
+          android:textSize="20sp"
+          android:id="@+id/nameTextView" android:gravity="center_vertical"/>
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" android:layout_marginLeft="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bookName"
+            android:textSize="20sp"/>
+      </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="50dp"
+    >
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/author"
+          android:id="@+id/authorTextView"
+          android:textColor="#9876aa"
+          android:textSize="20sp"
+          android:textStyle="bold" android:gravity="center_vertical"/>
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" android:layout_marginLeft="12dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bookAuthor"
+            android:textSize="20sp"/>
+      </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="50dp">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/description"
+          android:id="@+id/description" android:textStyle="bold" android:textSize="20sp"
+          android:textColor="#9876aa" android:layout_gravity="center_horizontal"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/bookDescription" android:layout_marginTop="10dp"
+          android:textSize="20sp" android:textStyle="italic"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/close_button_content"
+        android:id="@+id/closeButton" android:layout_gravity="center_horizontal"
+        android:onClick="onClickCloseButton" android:layout_marginTop="30dp"/>
+  </LinearLayout>
+
+</RelativeLayout>
