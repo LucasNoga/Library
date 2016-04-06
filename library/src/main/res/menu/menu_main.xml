@@ -3,14 +3,16 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context=".MainActivity">
   <item
-      android:id="@+id/action_settings"
+      android:id="@+id/action_sort_by_name"
       android:orderInCategory="100"
-      android:title="@string/action_settings"
+      android:title="@string/action_sort_by_name"
+      android:onClick="onClickSortByNameButton"
       app:showAsAction="never"/>
 
   <item
-      android:id="@+id/title"
-      android:title="@string/title"
+      android:id="@+id/action_sort_by_ID"
+      android:title="@string/action_sort_by_ID"
+      android:onClick="onClickSortByIDButton"
       android:orderInCategory="1"
   />
   <item
@@ -18,12 +20,14 @@
       android:title=""
       android:icon="@drawable/interrogation"
       android:orderInCategory="2"
+      android:onClick="onClickHelpButton"
       app:showAsAction="ifRoom"
   />
   <item
       android:id="@+id/add"
       android:title=""
       android:icon="@drawable/plus"
+      android:onClick="onClickAddButton"
       android:orderInCategory="3"
       app:showAsAction="ifRoom"
   />

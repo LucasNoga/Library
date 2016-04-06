@@ -12,4 +12,6 @@
   <string name="title_activity_modify_book">ModifyBook</string>
 
   <string name="title">Your list of books</string>
+  <string name="action_sort_by_ID">Sort by ID</string>
+  <string name="action_sort_by_name">Sort by name</string>
 </resources>
